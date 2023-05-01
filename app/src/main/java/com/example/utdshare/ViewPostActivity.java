@@ -1,5 +1,6 @@
 package com.example.utdshare;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -33,11 +34,14 @@ public class ViewPostActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_post);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
         try {
             loadPost(null);
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     public void loadPost(View view) throws ParseException {
