@@ -125,6 +125,10 @@ public class ViewPostActivity extends AppCompatActivity {
             Toast.makeText(this, "Comments are limited to 250 characters", Toast.LENGTH_SHORT).show();
             return;
         }
+        if(commentText.getText().toString().equals("")){
+            Toast.makeText(this, "Cannot make an empty comment", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Bundle b = getIntent().getExtras();
         ParseObject post = b.getParcelable("Post");
         post.fetch();
