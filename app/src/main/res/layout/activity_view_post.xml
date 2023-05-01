@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editText"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewPostActivity">
+
+    <TextView
+        android:id="@+id/postContentTextView"
+        android:layout_width="354dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="372dp"
+        android:isScrollContainer="true"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="100dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="156dp"
+        android:onClick="goBack"
+        android:text="Back"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/postContentTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/likesTextView"
+        android:layout_width="88dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="164dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/postContentTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/likeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:onClick="likePost"
+        android:text="Like"
+        app:layout_constraintBottom_toTopOf="@+id/postContentTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/likesTextView"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <ListView
+        android:id="@+id/commentListView"
+        android:layout_width="370dp"
+        android:layout_height="167dp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="242dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/postContentTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="159dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:text="Comments"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/commentListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postContentTextView"
+        app:layout_constraintVertical_bias="0.088" />
+
+    <EditText
+        android:id="@+id/commentEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="Comment..."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentListView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/commentButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="postComment"
+        android:text="Comment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/commentEditText"
+        app:layout_constraintTop_toBottomOf="@+id/commentListView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="loadPost"
+        android:text="Refresh"
+        app:layout_constraintBottom_toTopOf="@+id/usernameTextView"
+        app:layout_constraintEnd_toStartOf="@+id/likeButton"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

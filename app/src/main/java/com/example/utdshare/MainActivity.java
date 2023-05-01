@@ -18,6 +18,8 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     public void showPostFeed(){
@@ -52,19 +54,22 @@ public class MainActivity extends AppCompatActivity {
 
             user.setUsername(usernameEditText.getText().toString());
             user.setPassword(passwordEditText.getText().toString());
+            user.setEmail(usernameEditText.getText().toString() + "@utdallas.edu");
+
 
             user.signUpInBackground(new SignUpCallback() {
                 @Override
                 public void done(ParseException e) {
                     if (e==null){
                         Log.i("Signup", "Successful");
-                        showPostFeed();
+                        ParseUser.logOut();
+                        Toast.makeText(MainActivity.this, "Please verify your UTD email. Check your spam folder too!", Toast.LENGTH_LONG).show();
+
                     }else{
                         Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
-            });
-        }
+            });}
 
     }
 
@@ -81,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Add your initialization code here
         Parse.initialize(new Parse.Configuration.Builder(getApplicationContext())
-                .applicationId("myappID")
-                .clientKey("qUeLqFzbLEx7")
-                .server("http://3.142.220.120/parse")
+                .applicationId(getString(R.string.back4app_app_id))
+                .clientKey(getString(R.string.back4app_client_key))
+                .server(getString(R.string.back4app_server_url))
                 .build()
         );
 

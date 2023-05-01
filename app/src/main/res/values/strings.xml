@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">UTDShare</string>
-</resources>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <string name="back4app_app_id">N5aRqt27lWL1EuDyEzf3AjUb8eBYnC0CP6xTvjaE</string>
+    <string name="back4app_client_key">lLInVwLrSQiohF6aeJUv1LpvpIXz6O1uWURfjr8h</string>
+
+    </resources>

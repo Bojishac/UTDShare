@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ViewPostActivity"
+            android:exported="false" />
+        <activity
             android:name=".FeedActivity"
             android:exported="false" />
         <activity
@@ -28,6 +31,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.parse.SERVER_URL"
+            android:value="mongodb://admin:ER7w9gtcd2CD5Nw0XsFXRWMv@MongoS3601A.back4app.com:27017/d0db61ffb1d34bb18b41adfe5352de72" />
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="N5aRqt27lWL1EuDyEzf3AjUb8eBYnC0CP6xTvjaE" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="lLInVwLrSQiohF6aeJUv1LpvpIXz6O1uWURfjr8h" />
     </application>
 
 </manifest>
