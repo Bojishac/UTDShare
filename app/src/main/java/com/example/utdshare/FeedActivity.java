@@ -34,10 +34,12 @@ public class FeedActivity extends AppCompatActivity {
     }
 
     public void createPost(View view) throws InterruptedException {
-        EditText post = (EditText) findViewById(R.id.createPostEditText);
-        if(post.getText().equals("")){
+        EditText post = findViewById(R.id.createPostEditText);
+        if(post.getText().toString().equals("") || post.getText() == null){
             Toast.makeText(this, "Post cannot be empty", Toast.LENGTH_SHORT).show();
-        }else{
+        }else if(post.getText().toString().length()>250){
+            Toast.makeText(this, "Posts are limited to 250 characters", Toast.LENGTH_SHORT).show();
+        } else{
             ParseObject object = new ParseObject("Post");
             object.put("Content", post.getText().toString());
             object.put("Username", ParseUser.getCurrentUser().getUsername());

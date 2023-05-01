@@ -120,10 +120,14 @@ public class ViewPostActivity extends AppCompatActivity {
     }
 
     public void postComment(View view) throws ParseException, InterruptedException {
+        EditText commentText = findViewById(R.id.commentEditText);
+        if(commentText.getText().toString().length()>250){
+            Toast.makeText(this, "Comments are limited to 250 characters", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Bundle b = getIntent().getExtras();
         ParseObject post = b.getParcelable("Post");
         post.fetch();
-        EditText commentText = findViewById(R.id.commentEditText);
         List<String> comments = post.getList("Comments");
         if(comments==null){
             comments = new ArrayList<String>();
